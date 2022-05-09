@@ -15,14 +15,14 @@ export default class Movies extends Component {
     }
   async componentDidMount(){
       console.log('Mounting Done')
-      const res =  await axios.get(`https://api.themoviedb.org/3/movie/popular?api_key={"Your-API-Key"&language=en-US&page=${this.state.currPage}`);
+      const res =  await axios.get(`https://api.themoviedb.org/3/movie/popular?api_key="Your-API-Key"&language=en-US&page=${this.state.currPage}`);
       let data = res.data
       this.setState({
           movies:[...data.results]
       })
   }  
    changeMovies=()=>{
-        const res =   axios.get(`https://api.themoviedb.org/3/movie/popular?api_key=5540e483a20e0b20354dabc2d66a31c9&language=en-US&page=${this.state.currPage}`);
+        const res =   axios.get(`https://api.themoviedb.org/3/movie/popular?api_key="Your-API-Key"&language=en-US&page=${this.state.currPage}`);
         let data = res.data
         this.setState({
             movies:[...data.results]
